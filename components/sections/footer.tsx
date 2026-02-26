@@ -2,6 +2,7 @@
 
 import { NAV_LINKS, SITE_NAME } from '@/lib/constants'
 import { Instagram, Facebook, Mail, Phone, MapPin } from 'lucide-react'
+import Image from 'next/image'
 
 const SOCIAL_LINKS = [
   { icon: Instagram, href: '#', label: 'Instagram' },
@@ -16,13 +17,14 @@ export function Footer() {
         {/* Top section */}
         <div className="flex flex-col items-center gap-8">
           {/* Logo */}
-          <div className="text-center">
-            <span className="font-serif text-3xl font-bold tracking-wider text-primary-foreground">
-              IHD
-            </span>
-            <p className="mt-2 text-sm tracking-widest text-primary-foreground/40">
-              {SITE_NAME}
-            </p>
+          <div className="flex flex-col items-center">
+            <Image
+              src="/images/logo.png"
+              alt={SITE_NAME}
+              width={140}
+              height={56}
+              className="h-14 w-auto"
+            />
           </div>
 
           {/* Navigation */}

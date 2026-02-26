@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { NAV_LINKS, SITE_NAME } from '@/lib/constants'
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
@@ -43,10 +44,14 @@ export function Navigation() {
             className="flex items-center gap-2"
             aria-label="Go to home"
           >
-            <span className="font-serif text-2xl font-bold tracking-wider text-primary-foreground">
-              IHD
-            </span>
-            <span className="sr-only">{SITE_NAME}</span>
+            <Image
+              src="/images/logo.png"
+              alt={SITE_NAME}
+              width={120}
+              height={48}
+              className="h-10 w-auto lg:h-12"
+              priority
+            />
           </a>
 
           <ul className="hidden items-center gap-8 md:flex" role="list">
@@ -88,9 +93,13 @@ export function Navigation() {
             className="fixed inset-0 z-[60] bg-charcoal/98 backdrop-blur-md md:hidden"
           >
             <div className="flex items-center justify-between px-6 py-4">
-              <span className="font-serif text-2xl font-bold tracking-wider text-primary-foreground">
-                IHD
-              </span>
+              <Image
+                src="/images/logo.png"
+                alt={SITE_NAME}
+                width={100}
+                height={40}
+                className="h-9 w-auto"
+              />
               <button
                 onClick={() => setMobileOpen(false)}
                 className="text-primary-foreground"
