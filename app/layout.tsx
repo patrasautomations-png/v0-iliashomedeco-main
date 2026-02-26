@@ -1,15 +1,32 @@
-import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
+import { Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const _inter = Inter({ subsets: ['latin', 'greek'] })
+const _playfair = Playfair_Display({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'ILIAS HOME DECO | Luxury Furniture & Interior Design in Kefalonia',
+  description:
+    'Discover premium furniture collections, bespoke interior design services, and luxury home solutions for your Kefalonian home. Furniture, curtains, hanging systems, and mattresses.',
   generator: 'v0.app',
+  keywords: [
+    'luxury furniture Kefalonia',
+    'interior design Greece',
+    'home decoration',
+    'curtains',
+    'mattresses',
+    'ILIAS HOME DECO',
+  ],
+  openGraph: {
+    title: 'ILIAS HOME DECO | Luxury Furniture & Interior Design in Kefalonia',
+    description:
+      'Discover premium furniture collections and bespoke interior design services for your Kefalonian home.',
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'ILIAS HOME DECO',
+  },
   icons: {
     icon: [
       {
@@ -27,6 +44,12 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-icon.png',
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#B8860B',
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
